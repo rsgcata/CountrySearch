@@ -1,3 +1,9 @@
+### Setup / Run the app (Docker required)
+
+cd in {project root}/docker
+run `docker-compose up` in your shell/terminal
+Open a browser and go to http://localhost:8080 (make sure the port is not already in use)
+
 **Technical/implementation details**
 
 **_Client server architecture_**
