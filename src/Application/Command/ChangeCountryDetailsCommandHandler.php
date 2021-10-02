@@ -47,6 +47,7 @@ class ChangeCountryDetailsCommandHandler
             $this->transaction->commit();
         } catch (\Throwable $e) {
             $this->transaction->rollBack();
+            throw $e;
         }
     }
 }
