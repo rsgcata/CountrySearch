@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+
+  # App service
+  app:
+    build:
+      context: ../
+      dockerfile: "docker/Dockerfile"
+    image: app/core
+    container_name: app
+    hostname: app
+    restart: unless-stopped
+    tty: true
+    environment:
+      - SERVICE_NAME=app
+    working_dir: /app
+    # Volumes - uncomment this for code sync
+#    volumes:
+#      - ../:/var/www
+#      - /var/www/vendor # ignore vendor for local dev performance
+
+  # Nginx for app web server
+  webserver:
+    build:
+      context: ../
+      dockerfile: "docker/NginxDockerfile"
+    container_name: webserver
+    hostname: webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+    - 8080:8080
+    volumes:
+#      - ../ui/dist:/var/www # Uncomment if local UI dev
+      - ./nginx/conf.d:/etc/nginx/conf.d
+
+networks:
+  default:
+    name: app-network

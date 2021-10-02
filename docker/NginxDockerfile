@@ -1,0 +1,20 @@
+FROM node:14-alpine as node-nginx
+
+# Copy existing application directory & permissions
+RUN mkdir -p /var/www/build
+COPY ./ui /var/www/build
+
+# Build the UI
+RUN cd /var/www/build \
+    && npm i \
+    && npm run build
+
+RUN echo $(ls -1a /var/www/build)
+
+FROM nginx:alpine as nginx
+
+RUN mkdir -p /var/www
+COPY --from=node-nginx /var/www/build/dist /var/www
+
+EXPOSE 8080
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
