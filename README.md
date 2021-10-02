@@ -1,4 +1,8 @@
-### Setup / Run the app (Docker required)
+### Basic app/form to search for countries or to edit them
+
+Built with Symfony, Vue, Bootstrap, SQLite, PHPunit, Docker
+
+#### Setup / Run the app (Docker required)
 
 cd in {project root}/docker 
 
