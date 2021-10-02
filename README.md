@@ -1,6 +1,6 @@
 ### Basic app/form to search for countries or to edit them
 
-Built with Symfony, Vue, Bootstrap, SQLite, PHPunit, Docker
+Built with Symfony (domain driven design and hexagonal architecture), Vue, Bootstrap, SQLite, PHPunit, Docker
 
 #### Setup / Run the app (Docker required)
 
@@ -47,6 +47,3 @@ data. Countries ISO data can be set as static/constant countries map where each 
 its own details in an array. Allowing users to change data there without review might bring invalid
 ISO data. Another alternative if DB needs to be used, are migration files + code review may be a
 better approach (code review to see if country seed values correspond to ISO standard).
-I had some issue on some project where improper code made some services had inconsistent
-ISO locales (this could happen with country codes or calling codes if the data is not saved 
-somehow in a static and peer reviewed manner)
