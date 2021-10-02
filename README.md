@@ -1,6 +1,6 @@
 ### Basic app/form to search for countries or to edit them
 
-Built with Symfony, Vue, Bootstrap, SQLite, PHPunit, Docker
+Built with Symfony (domain driven design and hexagonal architecture), Vue, Bootstrap, SQLite, PHPunit, Docker
 
 #### Setup / Run the app (Docker required)
 
