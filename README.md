@@ -10,6 +10,10 @@ run `docker-compose up` in your shell/terminal
 
 Open a browser and go to http://localhost:8080 (make sure the port is not already in use)
 
+To run the tests run a terminal in the app container, cd to /var/www and run the command `php vendor/bin/phpunit`
+
+(on windows you can open a container terminal from docker UI, in Linux by running `docker exec -it app /bin/bash`)
+
 **Technical/implementation details**
 
 **_Client server architecture_**
